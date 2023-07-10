@@ -2,7 +2,17 @@
 module.exports = {
   content: ["./dist/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+    
+      gradientColorStops: {
+        "gradient-colors": [
+          "hsl(0, 100%, 67%)",
+          "hsl(39, 100%, 56%)",
+          "hsl(166, 100%, 37%)",
+          "hsl(234, 85%, 45%)",
+        ],
+      },
+    },
     colors: {
       LightRed: {
         text: "hsl(0, 100%, 67%)",
@@ -29,7 +39,22 @@ module.exports = {
       paleBlue: "hsl(221, 100%, 96%)",
       LightLavender: "hsl(241, 100%, 89%)",
       DarkGrayBlue: "hsl(224, 30%, 27%)",
+      whiteColor: "RGB(255,255,255)",
+      transparent: "RGB(0,0,0,0.5)",
+      shadowColor: "hsla(241, 100%, 89%, 0.2)",
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const bgClipUtilities = {
+        ".bg-clip-text": {
+          "-webkit-background-clip": "text",
+          "background-clip": "text",
+          color: "transparent",
+        },
+      };
+
+      addUtilities(bgClipUtilities, ["responsive"]);
+    },
+  ],
 };
