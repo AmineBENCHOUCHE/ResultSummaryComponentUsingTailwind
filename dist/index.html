@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel='stylesheet' href="/assets/fonts/HankenGrotesk-VariableFont_wght.ttf" />
+    <link rel='stylesheet' href="/assets/fonts/static/HankenGrotesk-Bold.ttf" />
+    <link rel='stylesheet' href="/assets/fonts/static/HankenGrotesk-ExtraBold.ttf" />
+    <link rel='stylesheet' href="/assets/fonts/static/HankenGrotesk-Medium.ttf" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <title>Frontend Mentor | Results summary component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body class="flex-col justify-center items-center">
+   <div>
+      <div class="flex justify-center">
+        <p>
+          Challenge by
+          <a class="bg-gradient-to-br from-hsl-252-100-67 to-hsl-241-81-54" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor
+          </a>
+        <br>
+        </p>
+      </div>
+      <div class="flex justify-center">
+        <p> Coded by <a id="profil-link" href="https://www.linkedin.com/in/amine-benchouche/">   
+            Amine Benchouche <i class="fab fa-linkedin"></i>  </a>
+        </p>
+      </div>
+    </div>
+ 
+    <article class="flex-col items-center justify-center">
+      <section class=" flex-col items-center justify-center text-center bg-gradient-to-br from-hsl-252-100-67 to-hsl-241-81-54 px-100">
+        <h1 class="text-hsl-241-100-89">Your Result</h1>
+        <div class="flex-col justify-center items-center text-center">
+          <p id="score">100</p>
+          <p id="percentage">of 100</p>
+        </div>
+        <p class="text-score">Excellent</p>
+        <p class="description-result">
+          You scored higher than 99% of the people who have taken these tests.
+        </p>
+      </section>
+      <section class="flex-col items-start bg-slate-400">
+        <p class="p-200">Summary</p>
+        <div class="flex justify-evenly bg-LightRed">
+          <div class="flex ">
+            <img class="reaction" src="/assets/images/icon-reaction.svg" alt="icon for reaction category"></img>
+            <p class="text-LightRed">Reaction</p>
+          </div>
+          <div class="score flex ">
+            <p class="score-category">100</p>
+            <p class="percentage">/ 100</p>
+          </div>
+        </div>
+        <div id="memory" class=" flex items-center">
+          <div class=" flex category">
+            <img class="memory" src="/assets/images/icon-memory.svg" alt="icon for memory category"></img>
+            <p class="text-OrangeyYellow">Memory</p>
+          </div>
+
+          <div class="flex ">
+            <p class="score-category">100</p>
+            <p class="percentage">/ 100</p>
+          </div>
+        </div>
+        <div id="verbal" class="flex">
+          <div class="flex">
+            <img class="verbal" src="/assets/images/icon-verbal.svg" alt="icon for verbal category"></img>
+            <p class="text-GreenTeal">Verbal</p>
+          </div>
+          <div class="flex ">
+            <p class="score-category ">100</p>
+            <p class="percentage">/ 100</p>
+          </div>
+        </div>
+        <div id="visual" class="flex justify-between">
+          <div class="flex justify-between">
+            <img class="visual" src="/assets/images/icon-visual.svg" alt="icon for visual category"></img>
+            <p class="text-CobaltBlue">Visual</p>
+          </div>
+          <div class="flex justify-between">
+            <p class="score-category ">100</p>
+            <p class="percentage">/ 100</p>
+          </div>
+        </div>
+        <button class="confetti-button text-LightRed" >
+          Congratulations &#127881;
+        </button>
+      </section>
+    </article>
+    
+ 
+   
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+
+          
+      let defaults = {
+      spread: 360,
+      ticks: 50,
+      gravity: 0,
+      decay: 0.94,
+      startVelocity: 25,
+      shapes: ["star"],
+      colors: ["hsl(185, 95%, 55%, 1)","hsla(0, 100%, 50%, 1)", "hsla(39, 100%, 50%, 1)", "hsla(256, 72%, 56%, 1)" ],
+    };
+
+const button = document.querySelector(".confetti-button");
+button.addEventListener("click", () => {
+  
+    let canvas = document.createElement("canvas");
+    let container = document.querySelector(".button-wrapper");
+    container.classList.add("fade-away");
+    canvas.width = 1440;
+    canvas.height = 2000;
+    container.appendChild(canvas);
+
+    let confetti_button = confetti.create(canvas);
+    confetti_button().then(() => container.removeChild(canvas));
+    function shoot() {
+      confetti({
+        ...defaults,
+        particleCount: 500,
+        scalar: 1.5,
+        shapes: ["star"],
+      });
+
+      confetti({
+        ...defaults,
+        particleCount: 100,
+        scalar: 1.75,
+        shapes: ["square"],
+      });
+      
+      
+    }
+    setTimeout(shoot, 0);
+    setTimeout(shoot, 400);
+    setTimeout(shoot, 1000);
+
+    setTimeout(function() {
+          container.classList.remove("fade-away");
+          container.classList.add('fade-in');
+          
+        
+      }, 1500);
+
+    container.classList.remove('fade-in');
+
+  }
+);
+let profil_link = document.getElementById('profil-link')
+profil_link.onmouseover = function(){
+  profil_link.classList.add('changeColor');
+  console.log('profil_link');
+}
+
+
+    </script>
+  </body>
+</html>
+
