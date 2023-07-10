@@ -919,6 +919,40 @@ video {
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-\[0_35px_60px_-15px_rgba\(0\2c 0\2c 0\2c 0\.3\)\] {
+  --tw-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
+  --tw-shadow-colored: 0 35px 60px -15px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-\[8px_8px_20px_5px_hsla\(241\2c 100\%\2c 89\%\2c 0\.2\)\] {
+  --tw-shadow: 8px 8px 20px 5px hsla(241, 100%, 89%, 0.2);
+  --tw-shadow-colored: 8px 8px 20px 5px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-LightRed-text\/20 {
+  --tw-shadow-color: hsl(0 100% 67% / 0.2);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-paleBlue\/20 {
+  --tw-shadow-color: hsl(221 100% 96% / 0.2);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-paleBlue\/50 {
+  --tw-shadow-color: hsl(221 100% 96% / 0.5);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-paleBlue\/70 {
+  --tw-shadow-color: hsl(221 100% 96% / 0.7);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
 .bg-clip-text {
   -webkit-background-clip: text;
   background-clip: text;
