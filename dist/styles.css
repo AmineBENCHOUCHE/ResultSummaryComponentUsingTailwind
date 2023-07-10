@@ -881,6 +881,9 @@ video {
   --tw-text-opacity: 1;
   color: hsl(221 100% 96% / var(--tw-text-opacity));
 }
+.text-whiteColor {
+  color: RGB(255,255,255);
+}
 .button-wrapper canvas {
   position: absolute;
   top: 50%;
