@@ -873,7 +873,7 @@ video {
   color: transparent;
 }
 
-+ .text-whiteColor {
+.text-whiteColor {
   color: RGB(255, 255, 255);
 }
 .button-wrapper canvas {
